@@ -1,0 +1,18 @@
+function [s, d] = generateCompleteTopo(totalNodeNum)
+% This function generate the source and node array for a ring topology
+% input: 
+%           totalNodeNum: number of nodes
+% output:
+%           s: source node array
+%           t: destination node array
+
+    s = zeros(1, (totalNodeNum-1)*totalNodeNum);
+    d = zeros(1, (totalNodeNum-1)*totalNodeNum);
+    Nodes = 1:1: totalNodeNum;
+    for k = 0:1:totalNodeNum-1
+        s(1, k*(totalNodeNum-1)+1: k*(totalNodeNum-1)+ (totalNodeNum-1)) = k+1;
+        dst = find(Nodes ~= k+1);
+        d(1, k*(totalNodeNum-1)+1: k*(totalNodeNum-1)+ (totalNodeNum-1)) = dst;
+    end
+
+end
