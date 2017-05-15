@@ -1,5 +1,5 @@
 function [s, d] = generateRingTopo(totalNodeNum)
-% This function generate the source and node array for a ring topology
+% This function generate the source and destination node array for a ring topology
 % input: 
 %           totalNodeNum: number of nodes
 % output:
